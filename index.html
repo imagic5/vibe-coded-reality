@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vibe Coded Reality — Original Games by Ian Rosner</title>
+<meta name="description" content="Vibe Coded Reality is the indie game studio of Ian Rosner. Home of Dubstep: Solar System — an endless neon dubstep rhythm-runner — and upcoming titles.">
+<meta name="author" content="Ian Rosner">
+<meta property="og:title" content="Vibe Coded Reality">
+<meta property="og:description" content="Original games by Ian Rosner. Dubstep: Solar System — out August 27, 2026 on Steam.">
+<meta property="og:image" content="https://imagic5.github.io/vibe-coded-reality/assets/dubstep-solar-system-cover.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/png" href="assets/vibe_coin.png">
+<style>
+  :root{
+    --bg:#05050f;
+    --panel:#0c0c1e;
+    --panel2:#10102a;
+    --text:#e8e8f4;
+    --dim:#9a9ab8;
+    --neon:#39ff6a;
+    --cyan:#28d8ff;
+    --magenta:#ff3fd4;
+    --gold:#ffd23f;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:"Segoe UI",system-ui,-apple-system,sans-serif;
+    line-height:1.6;
+    /* subtle starfield */
+    background-image:
+      radial-gradient(1px 1px at 25% 15%, #ffffff55 0, transparent 100%),
+      radial-gradient(1px 1px at 70% 40%, #ffffff33 0, transparent 100%),
+      radial-gradient(1.5px 1.5px at 45% 70%, #ffffff44 0, transparent 100%),
+      radial-gradient(1px 1px at 85% 80%, #ffffff2e 0, transparent 100%),
+      radial-gradient(1px 1px at 10% 55%, #ffffff3a 0, transparent 100%),
+      radial-gradient(1.5px 1.5px at 60% 5%, #ffffff40 0, transparent 100%);
+  }
+  a{color:var(--cyan)}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 20px}
+
+  header{padding:84px 0 60px;text-align:center}
+  .studio-name{
+    font-size:clamp(2rem,6vw,3.6rem);
+    font-weight:800;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    background:linear-gradient(90deg,var(--neon),var(--cyan) 50%,var(--magenta));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .tagline{margin-top:14px;color:var(--dim);font-size:1.1rem}
+
+  h2{
+    font-size:1.5rem;letter-spacing:.08em;text-transform:uppercase;
+    margin:0 0 22px;color:var(--text);
+  }
+  h2 span{color:var(--neon)}
+  section{padding:34px 0}
+
+  .card{
+    background:linear-gradient(180deg,var(--panel),var(--panel2));
+    border:1px solid #ffffff14;
+    border-radius:14px;
+    overflow:hidden;
+  }
+  .flagship{display:grid;grid-template-columns:minmax(0,380px) 1fr}
+  @media(max-width:760px){.flagship{grid-template-columns:1fr}}
+  .flagship img.cover{width:100%;height:100%;object-fit:cover;display:block}
+  .flagship-body{padding:26px 28px}
+  .flagship-body h3{font-size:1.6rem;margin-bottom:4px}
+  .flagship-body .sub{color:var(--dim);font-size:.95rem;margin-bottom:14px}
+  .flagship-body p{margin-bottom:12px}
+  .badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+  .btn{
+    display:inline-block;padding:10px 18px;border-radius:8px;
+    font-weight:700;text-decoration:none;font-size:.95rem;
+  }
+  .btn-steam{background:var(--neon);color:#04140a}
+  .btn-steam:hover{filter:brightness(1.1)}
+  .btn-itch{background:transparent;color:var(--cyan);border:1px solid var(--cyan)}
+  .btn-itch:hover{background:#28d8ff1a}
+  .date-note{color:var(--gold);font-weight:700;font-size:.9rem;align-self:center}
+
+  .shots{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:26px}
+  @media(max-width:600px){.shots{grid-template-columns:1fr}}
+  .shots img{width:100%;border-radius:8px;border:1px solid #ffffff14;display:block}
+
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  @media(max-width:700px){.grid{grid-template-columns:1fr}}
+  .upcoming{padding:24px 26px}
+  .upcoming h3{font-size:1.25rem;margin-bottom:6px}
+  .pill{
+    display:inline-block;font-size:.75rem;font-weight:700;letter-spacing:.06em;
+    text-transform:uppercase;padding:3px 10px;border-radius:99px;margin-bottom:10px;
+  }
+  .pill-dev{background:#ff3fd41f;color:var(--magenta);border:1px solid #ff3fd44d}
+  .pill-plan{background:#28d8ff1a;color:var(--cyan);border:1px solid #28d8ff4d}
+  .upcoming p{color:var(--dim);font-size:.95rem}
+
+  .trilogy{color:var(--dim);text-align:center;margin-top:20px;font-size:.95rem}
+  .trilogy b{color:var(--text)}
+
+  .about p{color:var(--dim);max-width:720px}
+  .about b{color:var(--text)}
+
+  .contact a{font-weight:700}
+
+  footer{
+    margin-top:40px;padding:26px 0 40px;border-top:1px solid #ffffff12;
+    color:var(--dim);font-size:.85rem;text-align:center;
+  }
+</style>
+</head>
+<body>
+
+<header class="wrap">
+  <div class="studio-name">Vibe Coded Reality</div>
+  <p class="tagline">Original games by Ian Rosner — code, art, and music built from scratch.</p>
+</header>
+
+<main class="wrap">
+
+  <section id="games">
+    <h2><span>//</span> Featured Game</h2>
+
+    <div class="card flagship">
+      <img class="cover" src="assets/dubstep-solar-system-cover.jpg" alt="Dubstep: Solar System cover art — a neon ship flying through a glowing tunnel">
+      <div class="flagship-body">
+        <h3>Dubstep: Solar System</h3>
+        <div class="sub">Endless neon rhythm-runner &middot; Windows &middot; Single-player</div>
+        <p>Fly a fixed ship through a winding, gradient-filled tunnel from Mercury to Pluto,
+        tapping beat-gates in time with nine original dubstep tracks. Nail the neon sweet spot
+        for PERFECT combos, bank Vibe Coins, ignite Star Power invincibility &mdash; and clear
+        five laps of the solar system to win.</p>
+        <div class="badges">
+          <!-- Steam page goes public before release; link resolves once the Coming Soon page is live. -->
+          <a class="btn btn-steam" href="https://store.steampowered.com/app/5037700/">Wishlist on Steam</a>
+          <span class="date-note">Out August 27, 2026</span>
+        </div>
+        <div class="badges">
+          <!-- Remove or relabel this button if the itch strategy changes (e.g. paid parity). -->
+          <a class="btn btn-itch" href="https://imagic5.itch.io/dubstep-solar-system">Web version on itch.io</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="shots">
+      <img src="assets/shot1.jpg" alt="Gameplay — a PERFECT hit splash with lightning over a gold Mercury tunnel">
+      <img src="assets/shot2.jpg" alt="Gameplay — deep blue Neptune tunnel with icicle spikes">
+      <img src="assets/shot3.jpg" alt="Gameplay — the orrery menu with planets orbiting a sun">
+    </div>
+  </section>
+
+  <section id="upcoming">
+    <h2><span>//</span> In the Works</h2>
+    <div class="grid">
+      <div class="card upcoming">
+        <span class="pill pill-dev">In development</span>
+        <h3>Dubstep: Galaxy</h3>
+        <p>The sequel — the beat leaves the solar system. New worlds, new tracks, new powers.</p>
+      </div>
+      <div class="card upcoming">
+        <span class="pill pill-dev">In development</span>
+        <h3>Mad Musk</h3>
+        <p>A 2-D side-scrolling run-and-gun in the spirit of the 1990s greats.</p>
+      </div>
+    </div>
+    <p class="trilogy">The Dubstep trilogy: <b>Solar System</b> &rarr; <b>Galaxy</b> &rarr; <b>Universe</b></p>
+  </section>
+
+  <section id="about" class="about">
+    <h2><span>//</span> About the Studio</h2>
+    <p><b>Vibe Coded Reality</b> is the one-person game studio of <b>Ian Rosner</b>.
+    Every title is original work &mdash; original code, original art, original licensed music &mdash;
+    built with an AI-assisted, vibe-first workflow and tuned by hand until it feels right.</p>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2><span>//</span> Contact</h2>
+    <p>Press, support, or just want to say hi: <a href="mailto:irosner1@gmail.com">irosner1@gmail.com</a></p>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    &copy; 2026 Ian Rosner / Vibe Coded Reality. All rights reserved.<br>
+    Dubstep: Solar System &mdash; original code, art, and music; not based on any existing title.
+  </div>
+</footer>
+
+</body>
+</html>
